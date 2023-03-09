@@ -9,6 +9,7 @@ services:
     volumes:
       - odoo-dev-code:/workspace
       - odoo-dev-cache:/home/vscode/.cache
+     # - ~/.ssh:/home/vscode/.ssh # ssh key
       - ..:/repo
     environment:
       - db_host=mydb
