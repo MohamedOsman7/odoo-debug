@@ -5,7 +5,8 @@
   "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
   "features": {},
-  "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.cache && sudo chown -R vscode:vscode /home/vscode/.ssh/config && chmod 700 ~/.ssh && chmod 600 ~/.ssh/*",
+//  "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.cache && sudo chown -R vscode:vscode /home/vscode/.ssh/config && chmod 700 ~/.ssh && chmod 600 ~/.ssh/*",
+  "postCreateCommand": "sh /repo/scripts/postcreate.sh",
   "customizations": {
     "vscode": {
       "settings": {

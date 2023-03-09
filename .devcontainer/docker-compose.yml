@@ -7,9 +7,9 @@ services:
     depends_on:
       - web
     volumes:
-      - ..:/workspace:rw
-      - ~/.ssh:/home/vscode/.ssh
-      - odoo-dev-data:/home/vscode/.cache
+      - odoo-dev-code:/workspace
+      - odoo-dev-cache:/home/vscode/.cache
+      - ..:/repo
     environment:
       - db_host=mydb
       - db_password=myodoo
@@ -27,9 +27,8 @@ services:
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./web/config:/etc/odoo
-      - ../user:/src/user
-      - ../odoo:/src/odoo
-      # - ../enterprise:/src/enterprise
+      - odoo-dev-code:/src
+     
     environment:
       - db_host=mydb
       - db_password=myodoo
@@ -44,6 +43,8 @@ services:
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
 volumes:
-  odoo-dev-data:
+  odoo-dev-cache:
+  odoo-dev-code:
   odoo-web-data:
   odoo-db-data:
+  
