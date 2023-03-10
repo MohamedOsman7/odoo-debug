@@ -6,7 +6,7 @@ sudo chown vscode:vscode /workspace
 cp -r /repo/.vscode /workspace/
 cp /repo/.env /workspace/.env
 
-
+sudo chown vscode:vscode /home/vscode/.cache
 
 if ! test -d /workspace/odoo; then
     echo "Cloning git repositories"
