@@ -23,8 +23,8 @@ services:
     depends_on:
       - mydb
     ports:
-      - "8089:8069"
-      - "8889:8888"
+      - "8099:8069"
+      - "8899:8888"
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./web/config:/etc/odoo
@@ -51,7 +51,7 @@ services:
       - PGADMIN_DEFAULT_EMAIL=user@domain.com
       - PGADMIN_DEFAULT_PASSWORD=SuperSecret
     ports:
-      - "8060:80" 
+      - "8090:80" 
     logging:
       driver: none
 volumes:
