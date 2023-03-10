@@ -2,11 +2,10 @@
 
 echo "Running postcreate.sh script"
 sudo chown vscode:vscode /workspace
+sudo chown vscode:vscode /home/vscode/.cache
 
 cp -r /repo/.vscode /workspace/
 cp /repo/.env /workspace/.env
-
-sudo chown vscode:vscode /home/vscode/.cache
 
 if ! test -d /workspace/odoo; then
     echo "Cloning git repositories"
