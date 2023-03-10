@@ -37,15 +37,26 @@ services:
   mydb:
     image: postgres:13
     environment:
-      - POSTGRES_DB=mydb
+      - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=myodoo
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
+  dbadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - mydb
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=user@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=SuperSecret
+    ports:
+      - "8060:80" 
+    logging:
+      driver: none
 volumes:
   odoo-dev-cache:
   odoo-dev-code:
   odoo-web-data:
   odoo-db-data:
-  
+   
