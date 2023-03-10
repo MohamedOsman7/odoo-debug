@@ -10,9 +10,9 @@ cp /repo/.env /workspace/.env
 if ! test -d /workspace/odoo; then
     echo "Cloning git repositories"
     cd /workspace
-    git clone -b 15.0 --single-branch https://github.com/odoo/odoo.git odoo
+    git clone -b 16.0 --single-branch https://github.com/odoo/odoo.git odoo
     # Add additional repositories here
-    # git clone -b 15.0 https://github.com/oca/timesheet.git timesheet
+    # git clone -b 16.0 https://github.com/oca/timesheet.git timesheet
     # ^^
     # cd /workspace/timesheet
     # git submodule update --init
